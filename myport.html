@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBOJIT SARMA | Full Stack Developer</title>
+    
+    <!-- Design Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;700&family=Syne:wght@800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root { --bg: #F5F4F0; --dark: #111111; }
+        body { font-family: 'Instrument Sans', sans-serif; background-color: var(--bg); color: var(--dark); scroll-behavior: smooth; }
+        
+        /* Premium Typography */
+        .hero-text { font-family: 'Syne', sans-serif; line-height: 0.95; letter-spacing: -0.03em; }
+        .project-title { font-family: 'Syne', sans-serif; letter-spacing: -0.02em; }
+        
+        /* Nav Profile Photo */
+        /* Sticky Nav Profile Photo with Adaptive Blend */
+        /* Circular photo ka color fix karne ke liye */
+        /* Clean Fixed Top Navigation Bar */
+        .nav-fixed {
+            background-color: rgba(245, 244, 240, 0.85); /* Page smooth background with slight blur */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .circular-photo { 
+            width: 38px; 
+            height: 38px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 1.5px solid #111111; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+        }
+        /* .circular-photo {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            /* Color blend change rokne ke liye: */
+            /* mix-blend-mode: normal !important; 
+            isolation: isolate;
+        } */ */
+        /* Hero Background Image Settings */
+            .hero-bg-custom {
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('Screenshot 2026-09-01 001531.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        
+        /* Image 7 Background Overlay */
+        .project-section-bg { 
+            background-image: url('img7.jpg'); 
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.04; 
+            position: absolute; 
+            inset: 0; 
+            pointer-events: none; 
+            z-index: 0;
+            filter: grayscale(100%);
+        }
+
+        /* Editorial Responsive Image Container */
+        .img-container { 
+            overflow: hidden; 
+            background: #e8e7e3; 
+            border: 1px solid rgba(0,0,0,0.05); 
+            width: 100%;
+        }
+        .img-container img { 
+            width: 100%; 
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            object-fit: cover; 
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
+        }
+        .img-container:hover img { transform: scale(1.04); }
+
+        .thin-border { border-color: rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- 1. TOP NAVIGATION -->
+    <!-- 1. TOP NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 md:px-12 flex justify-between items-center nav-fixed text-[#111111]">
+    <div class="flex items-center gap-3">
+        <img src="image9.png" class="circular-photo" alt="Debojit Sarma">
+        <a href="#home" class="text-lg md:text-xl font-bold tracking-tighter uppercase text-[#111111]">DEBOJIT SARMA</a>
+    </div>
+    <div class="hidden md:flex space-x-10 text-[11px] font-bold tracking-widest uppercase text-[#111111]">
+        <a href="#home" class="hover:opacity-50 transition">HOME</a>
+        <a href="#work" class="hover:opacity-50 transition">PROJECTS</a>
+        <a href="#about" class="hover:opacity-50 transition">ABOUT</a>
+        <a href="#contact" class="hover:opacity-50 transition">CONTACT</a>
+    </div>
+</nav>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24 pb-12">
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <!-- Chota Font Size -->
+            <h1 class="hero-text text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase mb-8">
+                FULL STACK<br>DEVELOPER
+            </h1>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-t thin-border pt-6 gap-6">
+                <p class="max-w-xl text-base md:text-lg leading-relaxed font-medium">
+                    Hi, I'm <span class="font-bold">DEBOJIT SARMA</span>. I build modern, responsive, and functional web applications from frontend to backend.
+                </p>
+                <div class="uppercase text-[10px] font-bold tracking-[0.2em] flex items-center gap-3 animate-bounce">
+                    <span>Scroll to explore</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0V11M6 11L1 6M6 11L11 6" stroke="black" stroke-width="2"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WORK / PROJECTS SECTION -->
+    <section id="work" class="relative py-20 border-t thin-border">
+        <div class="project-section-bg"></div>
+        
+        <div class="relative z-10 flex flex-col gap-24 px-6 md:px-12">
+            
+            <!-- PROJECT 1: AMAZON CLONE -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start" data-aos="fade-up">
+                <div class="md:col-span-7 space-y-4">
+                    <div class="img-container rounded-lg shadow-lg">
+                        <img src="image1.png" alt="Amazon Clone Hero">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="img-container rounded-lg shadow-md">
+                            <img src="image2.png" alt="Amazon Clone Grid">
+                        </div>
+                        <div class="img-container rounded-lg shadow-md">
+                            <img src="image3.png" alt="Amazon Clone Books">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 md:sticky md:top-24">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] mb-3 opacity-40">01 / E-COMMERCE</p>
+                    <h2 class="project-title text-3xl md:text-5xl uppercase font-black leading-tight mb-4 italic">AMAZON<br>CLONE</h2>
+                    <p class="text-sm md:text-base mb-6 leading-relaxed opacity-80">
+                        An interactive e-commerce application featuring real-time product search, category filtering, and a fully functional slide-over shopping cart.
+                    </p>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <span class="text-[10px] font-bold px-3 py-1.5 border border-black uppercase tracking-widest">HTML CSS JS</span>
+                        <a href="file:///C:/Users/sarma/Downloads/amazonclone.html" target="_blank" class="text-xs font-black underline underline-offset-4 uppercase hover:opacity-50 transition">Live Link</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: NETFLIX CLONE -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start" data-aos="fade-up">
+                <div class="md:col-span-5 md:sticky md:top-24 order-2 md:order-1">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] mb-3 opacity-40">02 / STREAMING</p>
+                    <h2 class="project-title text-3xl md:text-5xl uppercase font-black leading-tight mb-4">NETFLIX<br>CLONE</h2>
+                    <p class="text-sm md:text-base mb-6 leading-relaxed opacity-80">
+                        A responsive web application featuring real-time movie search, category filtering, and modal video trailers across multiple movie categories.
+                    </p>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <span class="text-[10px] font-bold px-3 py-1.5 border border-black uppercase tracking-widest">HTML CSS JS</span>
+                        <span class="text-xs font-bold opacity-30 italic">[LINK COMING SOON]</span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 space-y-4 order-1 md:order-2">
+                    <div class="img-container rounded-lg shadow-lg">
+                        <img src="image4.png" alt="Netflix Clone Hero">
+                    </div>
+                    <div class="img-container rounded-lg shadow-lg">
+                        <img src="image5.png" alt="Netflix Clone Trending">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. ABOUT & EDUCATION SECTION -->
+    <section id="about" class="py-20 px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-start border-t thin-border">
+        
+        <!-- LEFT COLUMN: Profile & Bio -->
+        <div class="md:col-span-5 space-y-8" data-aos="fade-right">
+            <div>
+                <h3 class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-zinc-400">01 / IDENTITY</h3>
+                <!-- Responsive Profile Image Fix -->
+                <div class="img-container rounded-lg max-w-sm">
+                    <img src="image9.png" alt="Debojit Sarma Profile">
+                </div>
+            </div>
+
+            <div>
+                <p class="text-lg md:text-xl font-medium leading-relaxed tracking-tight">
+                    I focus on creating visually striking and functional web applications. My work combines backend logic with sharp frontend precision.
+                </p>
+            </div>
+            
+            <div class="pt-6 border-t thin-border">
+                <h3 class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-zinc-400">02 / EXPERTISE</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold opacity-40 mb-1 tracking-widest">Languages</p>
+                        <p class="text-sm font-bold uppercase">Python, JS, C, C++</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold opacity-40 mb-1 tracking-widest">Technologies</p>
+                        <p class="text-sm font-bold uppercase">HTML, CSS, Node.js</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold opacity-40 mb-1 tracking-widest">Databases</p>
+                        <p class="text-sm font-bold uppercase">MySQL, MongoDB</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold opacity-40 mb-1 tracking-widest">Tools</p>
+                        <p class="text-sm font-bold uppercase">Git, GitHub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Education -->
+        <div class="md:col-span-7" data-aos="fade-left">
+            <h3 class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-zinc-400">03 / EDUCATION</h3>
+            <div class="space-y-8">
+                <!-- College -->
+                <div class="border-b thin-border pb-6">
+                    <p class="text-[10px] font-bold uppercase opacity-40 mb-2 tracking-[0.2em]">2025 — 2029</p>
+                    <h4 class="text-xl md:text-3xl font-black uppercase tracking-tight">Lovely Professional University</h4>
+                    <p class="text-xs md:text-sm font-bold uppercase mt-1">B.Tech in Computer Science and Engineering</p>
+                    <p class="inline-block mt-3 px-3 py-1 bg-black text-white text-[10px] font-bold tracking-[0.2em] uppercase">CGPA: 6.58</p>
+                </div>
+                <!-- 12th -->
+                <div class="border-b thin-border pb-6">
+                    <p class="text-[10px] font-bold uppercase opacity-40 mb-2 tracking-[0.2em]">Class 12 / 2025</p>
+                    <h4 class="text-lg md:text-2xl font-black uppercase tracking-tight">Fatikroy Class XII School</h4>
+                    <p class="text-xs font-bold uppercase mt-1 tracking-widest italic text-zinc-500">Result: 80.2%</p>
+                </div>
+                <!-- 10th -->
+                <div>
+                    <p class="text-[10px] font-bold uppercase opacity-40 mb-2 tracking-[0.2em]">Class 10 / 2023</p>
+                    <h4 class="text-lg md:text-2xl font-black uppercase tracking-tight">Fatikroy Class XII School</h4>
+                    <p class="text-xs font-bold uppercase mt-1 tracking-widest italic text-zinc-500">Result: 87.2%</p>
+                </div>
+                <!-- HERE IS YOUR CERTIFICATES SECTION (RED BOX AREA) -->
+<div class="mt-12 pt-8 border-t thin-border">
+    <h3 class="text-[10px] font-bold tracking-[0.3em] uppercase mb-6 text-zinc-400">04 / CERTIFICATES</h3>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- CERTIFICATE 1 -->
+        <div class="img-container rounded-lg shadow-md group relative">
+            <!-- Apne Pehle Certificate ki photo ka path yaha daal 'cert1.jpg' ki jagah -->
+            <img src="cert1.png" alt="Certificate 1" class="w-full h-auto object-cover">
+            <div class="p-3 bg-white/90 backdrop-blur-sm border-t thin-border">
+                <p class="text-xs font-bold uppercase">Certificate Title 1</p>
+                <p class="text-[10px] text-zinc-500 font-medium">Issuing Organization / 2026</p>
+            </div>
+        </div>
+
+        <!-- CERTIFICATE 2 -->
+        <div class="img-container rounded-lg shadow-md group relative">
+            <!-- Apne Dusre Certificate ki photo ka path yaha daal 'cert2.jpg' ki jagah -->
+            <img src="cert2.png" alt="Certificate 2" class="w-full h-auto object-cover">
+            <div class="p-3 bg-white/90 backdrop-blur-sm border-t thin-border">
+                <p class="text-xs font-bold uppercase">Certificate Title 2</p>
+                <p class="text-[10px] text-zinc-500 font-medium">Issuing Organization / 2026</p>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTACT SECTION -->
+    <section id="contact" class="bg-black text-white py-20 px-6 md:px-12 relative overflow-hidden">
+        <h2 class="project-title text-4xl md:text-6xl font-black uppercase leading-none mb-12 relative z-10" data-aos="fade-right">
+            LET'S<br>BUILD.
+        </h2>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 relative z-10">
+            <div class="flex flex-col gap-3">
+                <a href="mailto:sarmadebojit2024@gmail.com" class="text-lg md:text-2xl font-medium underline underline-offset-6 decoration-1 hover:text-zinc-400 transition break-all">
+                    sarmadebojit2024@gmail.com
+                </a>
+                <a href="tel:9366059386" class="text-sm opacity-60 hover:opacity-100 transition tracking-[0.2em]">
+                    Mobile: 9366059386
+                </a>
+            </div>
+            <div class="flex flex-wrap gap-6 text-[10px] font-bold uppercase tracking-[0.2em]">
+                <a href="https://github.com/sarmadebojit2024-droid" target="_blank" class="hover:opacity-50 transition border-b border-white/20 pb-1">GitHub</a>
+                <a href="https://www.linkedin.com/in/debojit-sarma-439657381/" target="_blank" class="hover:opacity-50 transition border-b border-white/20 pb-1">LinkedIn</a>
+                <a href="https://www.instagram.com/18__sarma/" target="_blank" class="hover:opacity-50 transition border-b border-white/20 pb-1">Instagram</a>
+            </div>
+        </div>
+        <div class="absolute -bottom-6 -right-6 text-[20vw] font-black opacity-[0.03] pointer-events-none uppercase project-title leading-none">DS</div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="py-6 px-6 md:px-12 flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.2em] bg-black text-zinc-600 border-t border-white/10">
+        <div>© 2026 DEBOJIT SARMA</div>
+        <div class="hidden md:block">Engineered with Precision</div>
+        <a href="#home" class="hover:text-white transition">Back to top ↑</a>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
